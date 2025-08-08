@@ -19,18 +19,16 @@ class SubjectiveLinkedinRealTimeDataSource(SubjectiveDataSource):
         pass
 
     def get_icon(self):
-        """Return the SVG code for the LinkedIn real-time icon."""
-        # Use textwrap.dedent to remove extra indentation.
-        svg = textwrap.dedent("""\
-            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none">
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-              <g id="SVGRepo_iconCarrier">
-                <path fill="#0A66C2" d="M12.225 12.225h-1.778V9.44c0-.664-.012-1.519-.925-1.519-.926 0-1.068.724-1.068 1.47v2.834H6.676V6.498h1.707v.783h.024c.348-.594.996-.95 1.684-.925 1.802 0 2.135 1.185 2.135 2.728l-.001 3.14zM4.67 5.715a1.037 1.037 0 01-1.032-1.031c0-.566.466-1.032 1.032-1.032.566 0 1.031.466 1.031 1.032 0 .566-.466 1.032-1.031 1.032zm.889 6.51h-1.78V6.498h1.78v5.727zM13.11 2H2.885A.88.88 0 002 2.866v10.268a.88.88 0 00.885.866h10.226a.882.882 0 00.889-.866V2.865a.88.88 0 00-.889-.864z"/>
-              </g>
-            </svg>
-        """)
-        return svg
+        """Return SVG icon content, preferring a local icon.svg in the plugin folder."""
+        import os
+        icon_path = os.path.join(os.path.dirname(__file__), 'icon.svg')
+        try:
+            if os.path.exists(icon_path):
+                with open(icon_path, 'r', encoding='utf-8') as f:
+                    return f.read()
+        except Exception:
+            pass
+        return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><rect width="16" height="16" rx="2" fill="#0A66C2"/><path fill="#fff" d="M5.56 12.23H3.78V6.5h1.78v5.73zM4.67 5.72a1.03 1.03 0 1 1 0-2.06 1.03 1.03 0 0 1 0 2.06zM12.22 12.23h-1.78V9.44c0-.66-.01-1.52-.92-1.52-.93 0-1.07.72-1.07 1.47v2.84H6.68V6.5h1.7v.78h.02c.35-.59 1-.95 1.69-.93 1.8 0 2.13 1.19 2.13 2.73v3.15z"/></svg>'
 
     def get_connection_data(self):
         """
