@@ -1,0 +1,67 @@
+{
+  "domainCategory": "Communication",
+  "subjectiveTechnologyElement": "KnowledgeHooks",
+  "sections": [
+    {
+      "type": "splitList",
+      "title": "Linkedin Real Time",
+      "text": "A Subjective data source for linkedin real time.",
+      "image": {
+        "src": "/subjective_linkedin_realtime_datasource/icon.svg",
+        "alt": "Linkedin Real Time icon"
+      },
+      "list": [
+        "Connection type: LinkedIn",
+        "Config fields: brainboost_cookie_linkedin_li_at, brainboost_cookie_linkedin_jsession",
+        "Output: Emits a real-time stream of events/items for downstream subscribers."
+      ]
+    },
+    {
+      "type": "example",
+      "title": "Typical workflow",
+      "intro": "Configure Linkedin Real Time with the connection fields and run it as part of a BrainBoost pipeline.",
+      "cards": [
+        {
+          "title": "Connect",
+          "text": "Provide brainboost_cookie_linkedin_li_at, brainboost_cookie_linkedin_jsession in the connection form."
+        },
+        {
+          "title": "Fetch",
+          "text": "Run `fetch()` to ingest, transform, or stream data."
+        },
+        {
+          "title": "Consume",
+          "text": "Use the emitted items in downstream indexing, search, or automation steps."
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "title": "FAQ",
+      "items": [
+        {
+          "q": "What do I need to configure?",
+          "a": "At minimum: brainboost_cookie_linkedin_li_at, brainboost_cookie_linkedin_jsession. Additional fields may be optional depending on your use case."
+        },
+        {
+          "q": "What does it output?",
+          "a": "Emits a real-time stream of events/items for downstream subscribers."
+        },
+        {
+          "q": "Where does the data go?",
+          "a": "Outputs are emitted to downstream subscribers in the BrainBoost pipeline. Some datasources also write artifacts (context files, catalogs, or exports) locally based on your configuration."
+        }
+      ]
+    },
+    {
+      "type": "finalCta",
+      "title": "Ready to use Linkedin Real Time?",
+      "text": "Add it to your BrainBoost pipeline and start ingesting.",
+      "primaryCta": {
+        "label": "Get Subjective Client",
+        "href": "/subjective-client-download"
+      },
+      "subtext": "Run this datasource locally with your own credentials and storage."
+    }
+  ]
+}
