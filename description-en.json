@@ -1,4 +1,5 @@
 {
+  "description": "LinkedIn realtime connector that uses session cookies to collect live LinkedIn signals and emit structured updates.",
   "domainCategory": "Communication",
   "subjectiveTechnologyElement": "KnowledgeHooks",
   "publisher": "BrainBoost Ltd.",
@@ -9,7 +10,7 @@
     {
       "type": "splitList",
       "title": "Linkedin Real Time",
-      "text": "A Subjective data source for linkedin real time.",
+      "text": "LinkedIn realtime connector that uses session cookies to collect live LinkedIn signals and emit structured updates.",
       "image": {
         "src": "/subjective_linkedin_realtime_datasource/icon.svg",
         "alt": "Linkedin Real Time icon"
